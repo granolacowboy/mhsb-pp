@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* MHSB Brand Colors */
+  --primary: #D96A4F; /* Terracotta / Burnt Orange */
+  --primary-dark: #c45a42; /* Darker variant for hover states */
+  --secondary: #2F364A; /* Dark Navy / Charcoal Blue */
+  --secondary-light: #3a4458; /* Lighter variant */
+  --accent: #E5A996; /* Light Coral / Peach */
+  --white: #FFFFFF;
+  --background: #FFFFFF;
+  --foreground: #2F364A;
+
+  /* Design Tokens */
+  --radius: 8px;
+  --radius-lg: 16px;
+  --shadow-soft: 0 4px 20px rgba(47, 54, 74, 0.08);
+  --shadow-medium: 0 8px 40px rgba(47, 54, 74, 0.12);
+  --shadow-large: 0 16px 60px rgba(47, 54, 74, 0.15);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #D96A4F 0%, #c45a42 100%);
+  --gradient-soft: linear-gradient(135deg, #E5A996 0%, #D96A4F 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(217, 106, 79, 0.05) 0%, rgba(229, 169, 150, 0.05) 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-primary-50: #fdf2f0;
+  --color-primary-100: #fae5e0;
+  --color-primary-200: #f4cec6;
+  --color-primary-300: #edb3a4;
+  --color-primary-400: #e49082;
+  --color-primary-500: #D96A4F;
+  --color-primary-600: #c45a42;
+  --color-primary-700: #a04a36;
+  --color-primary-800: #7d3a2b;
+  --color-primary-900: #5c2b20;
+
+  --color-secondary-50: #f2f3f6;
+  --color-secondary-100: #e5e7ed;
+  --color-secondary-200: #c8ced9;
+  --color-secondary-300: #a3acc1;
+  --color-secondary-400: #7a86a2;
+  --color-secondary-500: #2F364A;
+  --color-secondary-600: #2a3042;
+  --color-secondary-700: #242a39;
+  --color-secondary-800: #1e2330;
+  --color-secondary-900: #181d27;
+
+  --color-accent-50: #fdf8f6;
+  --color-accent-100: #fbf0ed;
+  --color-accent-200: #f7e1db;
+  --color-accent-300: #f1cfc5;
+  --color-accent-400: #ebbcab;
+  --color-accent-500: #E5A996;
+  --color-accent-600: #d99883;
+  --color-accent-700: #c8866f;
+  --color-accent-800: #b6745c;
+  --color-accent-900: #a46349;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+/* Hover effect utilities */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-large);
 }
