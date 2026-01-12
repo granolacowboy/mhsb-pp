@@ -1,21 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Logo } from './components/Logo';
 
 declare global {
   interface Window {
-    lm_intake: (id: string, scriptId: string, options: any) => void;
+    lm_intake: (id: string, scriptId: string, options: Record<string, unknown>) => void;
   }
 }
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
+  const isVisible = true;
   const [email, setEmail] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   const handleLawmaticsForm = () => {
     window.open('https://app.lawmatics.com/forms/share/2a7cbed9-37bd-4ca3-a772-877253eac3f2', '_blank');
@@ -41,12 +38,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-accent-200">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
-              <span className="text-xl font-bold text-secondary-500">MHSB</span>
-            </div>
+            <Logo size="sm" variant="light" />
             <div className="hidden md:flex items-center space-x-8">
               <a href="#services" className="text-secondary-400 hover:text-primary-500 transition-colors duration-300">Services</a>
               <a href="#expertise" className="text-secondary-400 hover:text-primary-500 transition-colors duration-300">Expertise</a>
@@ -215,7 +207,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-secondary-500 mb-4">Agent Readiness Audits</h3>
-              <p className="text-secondary-400">Comprehensive benchmarking and opportunity mapping to assess your firm's readiness for AI agent implementation.</p>
+              <p className="text-secondary-400">Comprehensive benchmarking and opportunity mapping to assess your firm&apos;s readiness for AI agent implementation.</p>
             </div>
           </div>
         </div>
@@ -272,7 +264,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-secondary-500 mb-2">End-to-End Support</h3>
-                    <p className="text-secondary-400">From consultation to implementation, training, and ongoing support - we're with you every step.</p>
+                    <p className="text-secondary-400">From consultation to implementation, training, and ongoing support - we&apos;re with you every step.</p>
                   </div>
                 </div>
               </div>
@@ -283,7 +275,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5 rounded-3xl"></div>
                 <div className="relative">
                   <blockquote className="text-2xl text-secondary-500 font-medium mb-6 leading-relaxed">
-                    "MHSB transformed our practice with their CRM implementation. We've seen a 36% increase in efficiency and our client satisfaction has never been higher."
+                    &quot;MHSB transformed our practice with their CRM implementation. We&apos;ve seen a 36% increase in efficiency and our client satisfaction has never been higher.&quot;
                   </blockquote>
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center">
@@ -371,14 +363,11 @@ export default function Home() {
       <footer className="bg-secondary-600 py-12 px-6 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
-              <span className="text-xl font-bold text-white">MHSB</span>
+            <div className="mb-4 md:mb-0">
+              <Logo size="sm" variant="dark" />
             </div>
             <div className="text-secondary-300">
-              © 2024 MHSB Legal Tech Consultants. All rights reserved.
+              © {new Date().getFullYear()} MHSB Legal Tech Consultants. All rights reserved.
             </div>
           </div>
         </div>

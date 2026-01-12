@@ -1,0 +1,11 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Crown -->
+  <path d="M8 7L10.5 3L16 6L21.5 3L24 7L22 8.5L16 5.5L10 8.5L8 7Z" fill="#E07555"/>
+  <!-- Key head (circular part) -->
+  <circle cx="16" cy="12.5" r="5" stroke="#E07555" stroke-width="2.5" fill="none"/>
+  <!-- Key shaft -->
+  <rect x="14.5" y="16" width="3" height="13" fill="#E07555"/>
+  <!-- Key teeth/notches -->
+  <rect x="17.5" y="23" width="3.5" height="2" fill="#E07555"/>
+  <rect x="17.5" y="26.5" width="2.5" height="1.5" fill="#E07555"/>
+</svg>

@@ -17,10 +17,30 @@ export const metadata: Metadata = {
   description: "Expert legal tech consultants specializing in CRM implementation, case management systems, practice management software, and AI solutions for law firms. Transform your legal practice with cutting-edge technology.",
   keywords: "legal tech, law firm CRM, case management, practice management, legal AI, law firm technology, legal software consultants",
   authors: [{ name: "MHSB Legal Tech Consultants" }],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/logo-icon.svg",
+  },
   openGraph: {
     title: "MHSB - Legal Tech Consultants | CRM & AI Solutions",
     description: "Transform your legal practice with expert technology consulting services. Specializing in CRM, case management, and AI solutions for law firms.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "MHSB Legal Tech Consultants",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MHSB - Legal Tech Consultants",
+    description: "Transform your legal practice with expert technology consulting services.",
+    images: ["/og-image.svg"],
   },
 };
 
